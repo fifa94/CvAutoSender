@@ -4,9 +4,14 @@ from WebScraperEasy import JobScraper
 from email_generator import generate_email_ollama, generate_email_gemini, test_gemini_api
 import threading
 import ollama
+from dotenv import load_dotenv
+import os
 
-try:
-    from config import GEMINI_API_KEY, OLLAMA_API_KEY
+
+try: 
+    load_dotenv('Config\.env')  # Načte proměnné prostředí z .env souboru, pokud existuje
+    GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
+    OLLAMA_API_KEY = os.getenv('OLLAMA_API_KEY')  
 except ImportError:
     GEMINI_API_KEY = ""
     OLLAMA_API_KEY = ""

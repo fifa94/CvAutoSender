@@ -1,0 +1,2 @@
+1)cd C:\Users\srame\Documents\Coding\CvAutoSender\CvAutoSender\config
+2)py -m pip list --format=freeze > requirements.txt    

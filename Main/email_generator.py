@@ -1,9 +1,13 @@
 import requests
 import json
-import ollama  # ✅ Přidáno pro komunikaci s Ollama Cloud API
+import ollama 
+from dotenv import load_dotenv
+import os
 
-try:
-    from config import GEMINI_API_KEY, OLLAMA_API_KEY
+try: 
+    load_dotenv('Config\.env')  # Načte proměnné prostředí z .env souboru, pokud existuje
+    GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
+    OLLAMA_API_KEY = os.getenv('OLLAMA_API_KEY')  
 except ImportError:
     GEMINI_API_KEY = ""
     OLLAMA_API_KEY = ""
